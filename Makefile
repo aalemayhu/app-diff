@@ -18,7 +18,7 @@ app:
 tests:
 	CFLAGS="-g -O0" $(MAKE) -C testing/
 
-tt: tests
+tt: clean tests
 	testing/app-diff-test
 
 clean:
