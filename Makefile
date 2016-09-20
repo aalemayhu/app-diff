@@ -21,6 +21,10 @@ tests:
 tt: tests
 	testing/app-diff-test
 
+clean:
+	rm bin/*
+	$(MAKE) clean -C testing
+
 .PHONY: tests
 
 .PHONY: tt
