@@ -1,8 +1,23 @@
 #ifndef _APP_DIFF_H
 #define _APP_DIFF_H
 
-int diff_score(char *a, char *b) {
-	return 0;
+float diff_score(char *a, char *b)
+{
+	int points;
+	int a_len = strlen(a);
+	int b_len = strlen(b);
+	int longest = a_len > b_len ? a_len : b_len;
+
+	points = 0;
+	if (a_len == b_len) {
+		int i;
+		for (i = 0; i < a_len; i++) {
+			if (a[i] == b[i])
+				points++;
+		}
+
+	}
+	return (float)points / (float)longest * 100;
 }
 
 #endif /* _APP_DIFF_H */

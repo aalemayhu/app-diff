@@ -13,17 +13,18 @@
 
 #include "api.h"
 
-static void test_score(void)
+static void test_score_singe_word(void)
 {
-	int expected = 80;
-	int actual = diff_score("import", "impors");
+	float expected = 83.333328;
+	float actual = diff_score("import", "impors");
 
+	printf("comparing %f with %f \n", expected, actual);
 	assert(expected == actual);
 }
 
 int test_api(void)
 {
-	test_score();
+	test_score_singe_word();
 
 	return TEST_OK;
 }
