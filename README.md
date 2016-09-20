@@ -11,6 +11,10 @@ LICENSE:
         LGPLv2.1+ (LICENSE.LGPL2.1)
         See COPYING for details.
 
+## Development
+
+To run the test suite just `make tt`.
+
 ## Supported languages
 
 - [ ] Swift
