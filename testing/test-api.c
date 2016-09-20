@@ -32,6 +32,8 @@ int test_score_multiple_words()
 	float expected = 100;
 	float actual = diff_score("one two", "one two");
 	verbose_assert(expected, actual);
+
+	return TEST_OK;
 }
 
 int test_api(void)
