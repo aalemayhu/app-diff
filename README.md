@@ -7,11 +7,6 @@ If you are only interested in specific files, you can run `app-diff --file $firs
 $second` and that should either show you a side by side diff or generate a html
 report.
 
-LICENSE:
-        LGPLv2.1+ (LICENSE.LGPL2.1)
-
-        See COPYING for details.
-
 ## Development
 
 To run the test suite just `make tt`.
