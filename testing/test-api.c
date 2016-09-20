@@ -30,9 +30,8 @@ static void test_score_single_word(void)
 int test_score_multiple_words()
 {
 	printf("%s\n", __func__);
-	float expected = 100;
-	float actual = diff_score("one two", "one two");
-	verbose_assert(expected, actual);
+	verbose_assert(100, diff_score("one two", "one two"));
+	verbose_assert(55.555557, diff_score("real tech", "real cars"));
 
 	return TEST_OK;
 }
