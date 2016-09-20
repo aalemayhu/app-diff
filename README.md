@@ -9,6 +9,7 @@ report.
 
 LICENSE:
         LGPLv2.1+ (LICENSE.LGPL2.1)
+
         See COPYING for details.
 
 ## Development
