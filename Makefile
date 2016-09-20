@@ -21,6 +21,8 @@ tests:
 
 tt: tests
 	testing/app-diff-test
+auto-tt:
+	fswatch -o testing/test-api.c | xargs -n1 -I{} make tt
 
 .PHONY: tests
 
