@@ -14,13 +14,14 @@
 #include "api.h"
 
 void verbose_assert(float expected, float actual) {
+	printf("%s\n", __func__);
 	printf("comparing %f with %f \n", expected, actual);
 	assert(expected == actual);
 }
 
 static void test_score_single_word(void)
 {
-	printf("test_score_single_word()\n");
+	printf("%s\n", __func__);
 	float expected = 83.333328;
 	float actual = diff_score("import", "impors");
 	verbose_assert(expected, actual);
@@ -28,7 +29,7 @@ static void test_score_single_word(void)
 
 int test_score_multiple_words()
 {
-	printf("test_score_multiple_words()\n");
+	printf("%s\n", __func__);
 	float expected = 100;
 	float actual = diff_score("one two", "one two");
 	verbose_assert(expected, actual);
@@ -38,6 +39,7 @@ int test_score_multiple_words()
 
 int test_api(void)
 {
+	printf("%s\n", __func__);
 	test_score_single_word();
 	test_score_multiple_words();
 
