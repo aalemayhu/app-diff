@@ -1,1 +1,3 @@
 bin/*
+*.o
+testing/app-diff-test
