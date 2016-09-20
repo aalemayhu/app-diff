@@ -28,3 +28,9 @@ int test_api(void)
 
 	return TEST_OK;
 }
+
+// TODO: test multiple words
+// TODO: test multiple lines
+// TODO: test using files
+// TODO: test using directories
+// TODO: test different character encodings
