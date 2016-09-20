@@ -1,6 +1,4 @@
-# Approximate diff
-
-A tool to help you discover code duplication between projects.
+app-diff - A tool to help you discover code duplication between projects.
 
 Running `app-diff` without arguments generates a report for the current
 directory. Only files matching the supported languages are analyzed.
