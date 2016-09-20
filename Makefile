@@ -16,14 +16,11 @@ app:
 .PHONY: app
 
 tests:
+	$(MAKE) clean -C testing
 	CFLAGS="-g -O0" $(MAKE) -C testing/
 
-tt: clean tests
+tt: tests
 	testing/app-diff-test
-
-clean:
-	rm bin/*
-	$(MAKE) clean -C testing
 
 .PHONY: tests
 
