@@ -13,24 +13,37 @@
 
 #include "api.h"
 
-static void test_score_singe_word(void)
-{
-	float expected = 83.333328;
-	float actual = diff_score("import", "impors");
-
+void verbose_assert(float expected, float actual) {
 	printf("comparing %f with %f \n", expected, actual);
 	assert(expected == actual);
 }
 
+static void test_score_single_word(void)
+{
+	printf("test_score_single_word()\n");
+	float expected = 83.333328;
+	float actual = diff_score("import", "impors");
+	verbose_assert(expected, actual);
+}
+
+int test_score_multiple_words()
+{
+	printf("test_score_multiple_words()\n");
+	float expected = 100;
+	float actual = diff_score("one two", "one two");
+	verbose_assert(expected, actual);
+}
+
 int test_api(void)
 {
-	test_score_singe_word();
+	test_score_single_word();
+	test_score_multiple_words();
 
 	return TEST_OK;
 }
 
-// TODO: test multiple words
 // TODO: test multiple lines
 // TODO: test using files
 // TODO: test using directories
 // TODO: test different character encodings
+// TODO: test different words

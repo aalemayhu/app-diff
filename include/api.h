@@ -3,6 +3,7 @@
 
 float diff_score(char *a, char *b)
 {
+	int i;
 	int points;
 	int a_len = strlen(a);
 	int b_len = strlen(b);
@@ -10,13 +11,13 @@ float diff_score(char *a, char *b)
 
 	points = 0;
 	if (a_len == b_len) {
-		int i;
 		for (i = 0; i < a_len; i++) {
 			if (a[i] == b[i])
 				points++;
 		}
 
 	}
+
 	return (float)points / (float)longest * 100;
 }
 
