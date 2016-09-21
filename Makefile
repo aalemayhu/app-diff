@@ -11,6 +11,7 @@ all: app
 .PHONY: all
 
 app:
+	mkdir -p bin/
 	gcc -Iinclude/ src/app-diff.c -o bin/app-diff
 
 .PHONY: app
