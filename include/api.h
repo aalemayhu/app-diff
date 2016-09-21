@@ -1,6 +1,9 @@
 #ifndef _APP_DIFF_H
 #define _APP_DIFF_H
 
+/*
+ * Return a score calculated by comparing all characters in $a and $b.
+ */
 float diff_score(char *a, char *b)
 {
 	int i;
