@@ -5,9 +5,10 @@ void compare_files(const char *argv);
 
 int main(int argc, const char *argv[])
 {
-	printf("NOT IMPLEMENTED YET\n");
 	if (argc == 3) {
 		compare_files(argv);
+	} else {
+		printf("NOT IMPLEMENTED YET\n");
 	}
 
 	return EXIT_SUCCESS;
