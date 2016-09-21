@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <dirent.h>
 #include "api.h"
 
 void compare_files(const char *argv[]);
@@ -6,10 +7,17 @@ void compare_files_in_current_directory();
 
 int main(int argc, const char *argv[])
 {
-	if (argc == 3) {
+	switch(argc) {
+	case 1:
+		compare_files_in_current_directory(".");
+		break;
+	case 2:
+		compare_files_in_current_directory(argv[1]);
+		break;
+	case 3:
+
 		compare_files(argv);
-	} else {
-		compare_files_in_current_directory();
+		break;
 	}
 
 	return EXIT_SUCCESS;
@@ -24,7 +32,7 @@ void compare_files(const char *argv[])
 	       diff_score_files(first, second));
 }
 
-void compare_files_in_current_directory()
+void compare_files_in_current_directory(char *path)
 {
 		printf("NOT IMPLEMENTED YET\n");
 }
