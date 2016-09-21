@@ -8,7 +8,7 @@ int main(int argc, const char *argv[])
 	if (argc == 3) {
 		compare_files(argv);
 	} else {
-		printf("NOT IMPLEMENTED YET\n");
+		compare_files_in_current_directory();
 	}
 
 	return EXIT_SUCCESS;
@@ -21,4 +21,9 @@ void compare_files(const char *argv)
 
 	printf("> COMPARING %s %s\n> > Score is %f\n", first, second,
 	       diff_score_files(first, second));
+}
+
+void compare_files_in_current_directory()
+{
+		printf("NOT IMPLEMENTED YET\n");
 }
