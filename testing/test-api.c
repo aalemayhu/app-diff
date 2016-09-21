@@ -43,6 +43,7 @@ int test_score_files()
 	printf("%s\n", __func__);
 	char *test_file = "testing/data/hello.swift";
 	assert(diff_score_files(test_file, test_file) == 100);
+	assert(diff_score_files(test_file, "testing/data/hello.c") != 100);
 
 	return TEST_OK;
 }
