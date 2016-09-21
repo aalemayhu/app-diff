@@ -38,17 +38,25 @@ int test_score_multiple_words()
 	return TEST_OK;
 }
 
+int test_score_files()
+{
+	printf("%s\n", __func__);
+	char *test_file = "testing/data/hello.swift";
+	assert(diff_score_files(test_file, test_file) == 100);
+
+	return TEST_OK;
+}
+
 int test_api(void)
 {
 	printf("%s\n", __func__);
 	test_score_single_word();
 	test_score_multiple_words();
-
+	test_score_files();
 	return TEST_OK;
 }
 
 // TODO: test multiple lines
-// TODO: test using files
 // TODO: test using directories
 // TODO: test different character encodings
 // TODO: test different words

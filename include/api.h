@@ -1,6 +1,8 @@
 #ifndef _APP_DIFF_H
 #define _APP_DIFF_H
 
+#include "io.h"
+
 /*
  * Return a score calculated by comparing all characters in $a and $b.
  */
@@ -28,6 +30,19 @@ float diff_score(char *a, char *b)
 	}
 
 	return (float)points / (float)longest * 100;
+}
+
+/*
+ * Return a score by comparing two files
+ */
+float diff_score_files(char *first_path, char *second_path)
+{
+	char *first_content = contents_of(first_path);
+	char *second_content = contents_of(second_path);
+	float score = diff_score(first_content, second_content);
+	free(first_content);
+	free(second_content);
+	return score;
 }
 
 #endif /* _APP_DIFF_H */
