@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "api.h"
 
-void compare_files(const char *argv);
+void compare_files(const char *argv[]);
+void compare_files_in_current_directory();
 
 int main(int argc, const char *argv[])
 {
@@ -14,7 +15,7 @@ int main(int argc, const char *argv[])
 	return EXIT_SUCCESS;
 }
 
-void compare_files(const char *argv)
+void compare_files(const char *argv[])
 {
 	const char *first = argv[1];
 	const char *second = argv[2];
