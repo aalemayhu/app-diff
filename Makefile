@@ -11,7 +11,7 @@ all: app
 .PHONY: all
 
 app:
-	gcc src/app-diff.c -o bin/app-diff
+	gcc -Iinclude/ src/app-diff.c -o bin/app-diff
 
 .PHONY: app
 
