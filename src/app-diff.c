@@ -4,6 +4,7 @@
 
 void compare_files(const char *argv[]);
 void compare_files_in_current_directory();
+void print_comparison(const char *first, const char *second);
 
 int main(int argc, const char *argv[])
 {
@@ -27,12 +28,34 @@ void compare_files(const char *argv[])
 {
 	const char *first = argv[1];
 	const char *second = argv[2];
+	print_comparison(first, second);
+}
 
-	printf("> COMPARING %s %s\n> > Score is %f\n", first, second,
-	       diff_score_files(first, second));
+void print_comparison(const char *first, const char *second)
+{
+	printf("%f: COMPARING %s %s\n",
+	       diff_score_files(first, second),
+	       first, second);
 }
 
 void compare_files_in_current_directory(char *path)
 {
-		printf("NOT IMPLEMENTED YET\n");
+	char **files;
+	size_t count;
+	int i, j;
+
+	count = file_list(path, &files);
+
+	printf("> DETECTED %d files\n", count);
+
+	for (i = 0; i < count; i++) {
+		for (j = 0; j < count; j++) {
+			const char *first = files[i];
+			const char *second = files[j];
+			if (!strcmp(first, second))
+				continue;
+			print_comparison(first, second);
+		}
+	}
+	free(files);
 }
