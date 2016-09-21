@@ -4,7 +4,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-char *contents_of(char *path)
+char *contents_of(const char *path)
 {
 	FILE    *infile;
 	char    *buffer;

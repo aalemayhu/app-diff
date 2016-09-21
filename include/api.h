@@ -36,7 +36,7 @@ float diff_score(char *a, char *b)
 /*
  * Return a score by comparing two files
  */
-float diff_score_files(char *first_path, char *second_path)
+float diff_score_files(const char *first_path, const char *second_path)
 {
 	char *first_content = contents_of(first_path);
 	char *second_content = contents_of(second_path);
