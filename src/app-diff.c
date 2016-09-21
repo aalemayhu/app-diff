@@ -10,7 +10,7 @@ int main(int argc, const char *argv[])
 		compare_files(argv);
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }
 
 void compare_files(const char *argv)
