@@ -2,6 +2,7 @@
 #define _APP_DIFF_H
 
 #include "io.h"
+#include <string.h>
 
 /*
  * Return a score calculated by comparing all characters in $a and $b.
