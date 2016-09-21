@@ -1,4 +1,9 @@
 // FROM: http://www.fundza.com/c4serious/fileIO_reading_all/
+
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
+
 char *contents_of(char *path)
 {
 	FILE    *infile;
