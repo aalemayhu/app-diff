@@ -16,6 +16,12 @@ float diff_score(char *a, char *b)
 				points++;
 		}
 
+	} else {
+		int shortest = a_len < b_len ? a_len : b_len;
+		for (i = 0; i < shortest; i++) {
+			if (a[i] == b[i])
+				points++;
+		}
 	}
 
 	return (float)points / (float)longest * 100;

@@ -33,6 +33,8 @@ int test_score_multiple_words()
 	verbose_assert(100, diff_score("one two", "one two"));
 	verbose_assert(55.555557, diff_score("real tech", "real cars"));
 
+	assert(diff_score("1 2 3 4", "1 2 3") > 50);
+
 	return TEST_OK;
 }
 
