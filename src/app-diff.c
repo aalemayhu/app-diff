@@ -3,17 +3,17 @@
 #include "api.h"
 
 void compare_files(const char *argv[]);
-void compare_files_in_current_directory();
+void compare_files_in_directory(char *path);
 void print_comparison(const char *first, const char *second);
 
 int main(int argc, const char *argv[])
 {
 	switch(argc) {
 	case 1:
-		compare_files_in_current_directory(".");
+		compare_files_in_directory(".");
 		break;
 	case 2:
-		compare_files_in_current_directory(argv[1]);
+		compare_files_in_directory(argv[1]);
 		break;
 	case 3:
 
@@ -38,7 +38,7 @@ void print_comparison(const char *first, const char *second)
 	       first, second);
 }
 
-void compare_files_in_current_directory(char *path)
+void compare_files_in_directory(char *path)
 {
 	char **files;
 	size_t count;
