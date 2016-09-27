@@ -1,7 +1,6 @@
 // FROM: http://www.fundza.com/c4serious/fileIO_reading_all/
 
 #include <dirent.h>
-#include <malloc.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
