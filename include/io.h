@@ -36,7 +36,6 @@ char *contents_of(const char *path)
 // FROM: http://stackoverflow.com/questions/11291154/save-file-listing-into-array-or-something-else-c
 size_t file_list(const char *path, char ***ls) {
     size_t count = 0;
-    size_t length = 0;
     DIR *dp = NULL;
     struct dirent *ep = NULL;
 
