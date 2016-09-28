@@ -31,7 +31,7 @@ void compare_files(const char *argv[])
 
 void print_comparison(const char *first, const char *second)
 {
-	printf("%f: COMPARING %s %s\n",
+	printf(">> %f: %s %s\n",
 	       diff_score_files(first, second),
 	       first, second);
 }
@@ -44,7 +44,7 @@ void compare_files_in_directory(const char *path)
 
 	count = file_list(path, &files);
 
-	printf("> DETECTED %ld files\n", count);
+	printf("> %ld\n", count);
 
 	for (i = 0; i < count; i++) {
 		for (j = 0; j < count; j++) {
