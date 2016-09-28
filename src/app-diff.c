@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <dirent.h>
 #include "api.h"
 
 void compare_files(const char *argv[]);
