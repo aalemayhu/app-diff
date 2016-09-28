@@ -51,9 +51,7 @@ void compare_files_in_directory(const char *path)
 			char *first, *second;
 			asprintf(&first, "%s%s", path, files[i]);
 			asprintf(&second, "%s%s", path, files[j]);
-			if (!strcmp(first, second))
-				continue;
-			else
+			if ((!first && !second) && strcmp(first, second))
 				print_comparison(first, second);
 			free(first);
 			free(second);
