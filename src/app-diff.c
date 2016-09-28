@@ -50,11 +50,15 @@ void compare_files_in_directory(const char *path)
 
 	for (i = 0; i < count; i++) {
 		for (j = 0; j < count; j++) {
-			const char *first = files[i];
-			const char *second = files[j];
+			char *first, *second;
+			asprintf(&first, "%s%s", path, files[i]);
+			asprintf(&second, "%s%s", path, files[j]);
 			if (!strcmp(first, second))
 				continue;
-			print_comparison(first, second);
+			else
+				print_comparison(first, second);
+			free(first);
+			free(second);
 		}
 	}
 	free(files);
