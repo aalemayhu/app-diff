@@ -1,10 +1,10 @@
 /*
  * Copyright (C) 2016 Red Hat, Inc.
  *
- * udrm is free software; you can redistribute it and/or modify it under
- * the terms of the GNU Lesser General Public License as published by the
- * Free Software Foundation; either version 2.1 of the License, or (at
- * your option) any later version.
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
  */
 
 #define _GNU_SOURCE
@@ -23,7 +23,6 @@
 
 #define N_TESTS (sizeof(tests) / sizeof(tests[0]))
 
-static const char *arg_module = "udrm";
 static const char *arg_test;
 char *test_path;
 
@@ -133,7 +132,7 @@ static int parse_argv(int argc, char **argv)
 		case 'h':
 			fprintf(stderr,
 				"Usage: %s [OPTIONS...] {TEST} ...\n\n"
-				"Run udrm tests. If no test is specified, "
+				"Run app-diff tests. If no test is specified, "
 				"all tests are run sequentially.\n\n"
 				"\t-h, --help         Print this help\n"
 				"\nTests:\n"
@@ -143,10 +142,6 @@ static int parse_argv(int argc, char **argv)
 				fprintf(stderr, "\t%s\n", tests[i].name);
 
 			return 0;
-
-		case ARG_MODULE:
-			arg_module = optarg;
-			break;
 
 		case '?':
 			/* fallthrough */
