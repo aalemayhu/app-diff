@@ -1,5 +1,5 @@
 #include "api.h"
-#include "app-diff.h"
+#include <stdio.h>
 
 void print_comparison(const char *first, const char *second);
 void compare_files_in_directory(const char *path);
