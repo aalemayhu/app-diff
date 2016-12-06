@@ -1,6 +1,10 @@
 #include "api.h"
 #include "app-diff.h"
 
+void print_comparison(const char *first, const char *second);
+void compare_files_in_directory(const char *path);
+void compare_files(const char *argv[]);
+
 int main(int argc, const char *argv[])
 {
 	switch(argc) {
