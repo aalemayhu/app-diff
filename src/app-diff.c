@@ -1,5 +1,9 @@
 #define _GNU_SOURCE
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <stdbool.h>
 
 #include "api.h"
 
@@ -39,6 +43,21 @@ void print_comparison(const char *first, const char *second)
 	       first, second);
 }
 
+bool is_directory(char *path)
+{
+	struct stat s;
+
+	if (0 > stat(path, &s))
+		perror("stat");
+
+	if (s.st_mode & S_IFDIR)
+		return true;
+	else if (s.st_mode & S_IFREG)
+		return false;
+
+	return false;
+}
+
 void compare_files_in_directory(const char *path)
 {
 	printf("%s\n", __func__);
@@ -53,10 +72,15 @@ void compare_files_in_directory(const char *path)
 	for (i = 0; i < count; i++) {
 		for (j = 0; j < count; j++) {
 			char *first, *second;
-			asprintf(&first, "%s%s", path, files[i]);
-			asprintf(&second, "%s%s", path, files[j]);
-			if ((!first && !second) && strcmp(first, second))
+
+			asprintf(&first, "%s/%s", path, files[i]);
+			asprintf(&second, "%s/%s", path, files[j]);
+			if (is_directory(first) || is_directory(second))
+				goto cleanup;
+
+			if (strcmp(first, second))
 				print_comparison(first, second);
+cleanup:
 			free(first);
 			free(second);
 		}
