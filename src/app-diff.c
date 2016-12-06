@@ -41,6 +41,7 @@ void print_comparison(const char *first, const char *second)
 
 void compare_files_in_directory(const char *path)
 {
+	printf("%s\n", __func__);
 	char **files;
 	size_t count;
 	int i, j;
